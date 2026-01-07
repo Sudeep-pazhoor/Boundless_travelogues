@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PackageCard from '../components/PackageCard.jsx';
+import DestinationCards from '../components/DestinationCards.jsx';
+---
+
+<Layout title="Packages - Boundless Travelogues">
+  <section class="container packages-page">
+    <h1 class="packages-title" style="text-align: center; color: var(--primary-color);">Our Packages</h1>
+    <p class="packages-subtitle" style="text-align: center; font-size: 1.15rem; margin-bottom: 3rem; color: var(--text-color);">All packages include assured best accommodations with quality food, guided tours, and seamless transport.</p>
+    
+    <!-- Main Package Categories -->
+    <h2 class="packages-section-title" style="color: var(--primary-color); margin-bottom: 1.5rem;">Destination-Based Packages</h2>
+    <div class="grid" style="margin-bottom: 4rem;">
+      <PackageCard client:load 
+        title="Multi-Destination Escapes" 
+        image="https://plus.unsplash.com/premium_photo-1661883853185-165f5869e6d3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGlraW5nfGVufDB8fDB8fHww" 
+        description="Short-term escapes exploring Kerala's gems - Kochi, Munnar, Wayanad, Ooty, and more." 
+        link="/packages/multi-destination" 
+        accommodation="Premium resorts with local Kerala cuisine" />
+      
+      <PackageCard client:load 
+        title="Far-Away Getaways" 
+        image="https://w0.peakpx.com/wallpaper/107/311/HD-wallpaper-beach-resort-sunset-high-quality.jpg" 
+        description="Venture to Goa, Bangalore, Hyderabad, and South India's best destinations." 
+        link="/packages/far-away" 
+        accommodation="Comfortable stays with regional delicacies" />
+      
+      <PackageCard client:load 
+        title="International Destinations" 
+        image="https://img.freepik.com/premium-photo/travel-world-monuments_117023-960.jpg?semt=ais_hybrid&w=740&q=80" 
+        description="Global adventures to Malaysia, Singapore, Maldives, Bali, Thailand, Dubai, and Europe." 
+        link="/packages/international" 
+        accommodation="Top hotels with local flavors and guided stays" />
+    </div>
+
+    <!-- Destination Cards Section -->
+    <DestinationCards client:load />
+
+  </section>
+  
+  <style>
+    @media (max-width: 768px) {
+      .packages-page {
+        padding: 2.5rem 1rem !important;
+      }
+      
+      .packages-title {
+        font-size: 2rem !important;
+      }
+      
+      .packages-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 2.5rem !important;
+      }
+      
+      .packages-section-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.25rem !important;
+      }
+      
+      .grid {
+        margin-bottom: 3rem !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .packages-page {
+        padding: 2rem 0.75rem !important;
+      }
+      
+      .packages-title {
+        font-size: 1.75rem !important;
+      }
+      
+      .packages-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 2rem !important;
+      }
+      
+      .packages-section-title {
+        font-size: 1.35rem !important;
+        margin-bottom: 1rem !important;
+      }
+      
+      .grid {
+        margin-bottom: 2.5rem !important;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .packages-title {
+        font-size: 1.5rem !important;
+      }
+      
+      .packages-subtitle {
+        font-size: 0.9rem !important;
+      }
+      
+      .packages-section-title {
+        font-size: 1.2rem !important;
+      }
+    }
+  </style>
+</Layout>

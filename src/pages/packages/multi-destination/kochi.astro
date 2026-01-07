@@ -1,0 +1,164 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Kochi Package - Boundless Travelogues">
+  <section class="container fade-in">
+    <h1 style="text-align: center; color: var(--primary-color);"> Queen of the Arabian Sea</h1>
+    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-color);">Experience the perfect blend of heritage, culture, and coastal beauty</p>
+    
+    <!-- Hero Image -->
+    <div style="margin-bottom: 3rem;">
+      <img src="https://wallpaperaccess.com/full/8491535.jpg" alt="Kochi" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+    </div>
+
+    <!-- Famous Places -->
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Famous & Most Visited Places</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div class="place-card">
+          <h3><i class="fas fa-fort-awesome" style="color: #00d4ff;"></i> Fort Kochi</h3>
+          <p>Historic colonial architecture, art galleries, and charming cafes. Walk through centuries of Portuguese, Dutch, and British influence.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-fish" style="color: #00d4ff;"></i> Chinese Fishing Nets</h3>
+          <p>Iconic fishing nets at sunset, a symbol of Kochi's maritime heritage. Watch fishermen demonstrate this ancient technique.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-church" style="color: #00d4ff;"></i> St. Francis Church</h3>
+          <p>India's oldest European church where Vasco da Gama was originally buried. A testament to colonial history.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-landmark" style="color: #00d4ff;"></i> Mattancherry Palace</h3>
+          <p>Dutch Palace with stunning Kerala murals depicting Hindu temple art and portraits of Cochin Rajas.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-place-of-worship" style="color: #00d4ff;"></i> Paradesi Synagogue</h3>
+          <p>Oldest active synagogue in Commonwealth with hand-painted Chinese tiles and Belgian chandeliers.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-water" style="color: #00d4ff;"></i> Marine Drive</h3>
+          <p>Scenic promenade along the backwaters, perfect for evening walks and boat rides with stunning sunset views.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-chess-rook" style="color: #00d4ff;"></i> Bolgatty Palace</h3>
+          <p>Island palace turned heritage hotel with lush gardens, offering panoramic views of the harbor.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3><i class="fas fa-masks-theater" style="color: #00d4ff;"></i> Kathakali Centre</h3>
+          <p>Experience traditional Kerala dance-drama with elaborate costumes and makeup demonstrations.</p>
+        </div>
+      </div>
+
+      <!-- Package Highlights -->
+      <div class="highlight-box">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Package Highlights</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));">🚐</div>
+            <h4 style="color: var(--primary-color);">Comfortable Transport</h4>
+            <p style="color: var(--text-muted);">AC vehicles with experienced drivers</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));">🎫</div>
+            <h4 style="color: var(--primary-color);">All Entry Tickets</h4>
+            <p style="color: var(--text-muted);">Included for major attractions</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));">👨‍🏫</div>
+            <h4 style="color: var(--primary-color);">Expert Guide</h4>
+            <p style="color: var(--text-muted);">Local guides with historical knowledge</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));">📸</div>
+            <h4 style="color: var(--primary-color);">Photo Opportunities</h4>
+            <p style="color: var(--text-muted);">Curated spots for memorable pictures</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="text-align: center;">
+        <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Ready to Explore Kochi?</h3>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-color);">Contact us to customize your perfect Kochi experience!</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="btn-primary">Book Now</a>
+          <a href="/packages/multi-destination" class="btn-secondary">Back to Packages</a>
+          <a href="https://wa.me/918078107622?text=Hi%2C%20I'm%20interested%20in%20the%20Kochi%20package%21" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .place-card {
+    background: rgba(10, 15, 25, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .place-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .place-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.25), 0 0 30px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(15, 20, 30, 0.95);
+  }
+  
+  .place-card:hover::before {
+    opacity: 1;
+  }
+  
+  .place-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .place-card p {
+    color: var(--text-color);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.75rem !important;
+    }
+    
+    .place-card {
+      padding: 1.25rem;
+    }
+  }
+</style>

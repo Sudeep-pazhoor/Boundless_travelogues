@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PackageCard from '../../components/PackageCard.jsx';
+---
+
+<Layout title="International Destinations - Boundless Travelogues">
+  <section class="container">
+    <h1 style="text-align: center; color: var(--primary-color);">International Destinations</h1>
+    <p style="text-align: center; font-size: 1.15rem; margin-bottom: 3rem; color: var(--text-color);">Global adventures with top hotels, local flavors, and guided stays</p>
+    
+    <div class="grid">
+      <PackageCard client:load 
+        title="Malaysia" 
+        image="https://wallpaperaccess.com/full/1231563.jpg" 
+        description="Petronas Towers, Langkawi beaches, and diverse culture." 
+        link="/packages/international/malaysia" />
+      
+      <PackageCard client:load 
+        title="Singapore" 
+        image="https://wallpaperaccess.com/full/189096.jpg" 
+        description="Gardens by the Bay, Marina Bay Sands, and world-class attractions." 
+        link="/packages/international/singapore" />
+      
+      <PackageCard client:load 
+        title="Maldives" 
+        image="https://wallpaperaccess.com/full/465641.jpg" 
+        description="Overwater bungalows, crystal clear waters, and luxury resorts." 
+        link="/packages/international/maldives" />
+      
+      <PackageCard client:load 
+        title="Bali" 
+        image="https://wallpaperaccess.com/full/441130.jpg" 
+        description="Temples, rice terraces, beaches, and vibrant Balinese culture." 
+        link="/packages/international/bali" />
+      
+      <PackageCard client:load 
+        title="Thailand" 
+        image="https://wallpaperaccess.com/full/150577.jpg" 
+        description="Bangkok temples, Phuket beaches, and authentic Thai experiences." 
+        link="/packages/international/thailand" />
+      
+      <PackageCard client:load 
+        title="Bhutan" 
+        image="https://wallpaperaccess.com/full/1478947.jpg" 
+        description="Himalayan kingdom with monasteries, mountains, and happiness." 
+        link="/packages/international/bhutan" />
+      
+      <PackageCard client:load 
+        title="Dubai" 
+        image="https://wallpaperaccess.com/full/222685.jpg" 
+        description="Burj Khalifa, desert safaris, luxury shopping, and modern marvels." 
+        link="/packages/international/dubai" />
+      
+      <PackageCard client:load 
+        title="Vietnam" 
+        image="https://wallpaperaccess.com/full/462014.jpg" 
+        description="Hanoi streets, Ha Long Bay cruises, and rich history." 
+        link="/packages/international/vietnam" />
+      
+      <PackageCard client:load 
+        title="Europe" 
+        image="https://wallpaperaccess.com/full/202444.jpg" 
+        description="Paris to Rome - iconic cities, art, culture, and cuisine." 
+        link="/packages/international/europe" />
+    </div>
+  </section>
+</Layout>

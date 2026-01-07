@@ -1,0 +1,158 @@
+.animated-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.gradient-orbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+  top: -15%;
+  left: -15%;
+  animation-duration: 30s;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.2) 0%, transparent 70%);
+  bottom: -15%;
+  right: -15%;
+  animation-duration: 35s;
+  animation-delay: -8s;
+}
+
+.orb-3 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 40s;
+  animation-delay: -15s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(60px, -60px) scale(1.1);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(0.9);
+  }
+  75% {
+    transform: translate(50px, 70px) scale(1.05);
+  }
+}
+
+/* Travel-themed floating icons */
+.travel-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.travel-icon {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.08;
+  animation: floatTravel 40s ease-in-out infinite;
+}
+
+.icon-1 {
+  top: 15%;
+  left: 10%;
+  animation-duration: 45s;
+  animation-delay: 0s;
+}
+
+.icon-2 {
+  top: 60%;
+  right: 15%;
+  animation-duration: 50s;
+  animation-delay: -10s;
+}
+
+.icon-3 {
+  bottom: 20%;
+  left: 20%;
+  animation-duration: 55s;
+  animation-delay: -20s;
+}
+
+.icon-4 {
+  top: 40%;
+  right: 25%;
+  animation-duration: 48s;
+  animation-delay: -15s;
+}
+
+@keyframes floatTravel {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.08;
+  }
+  25% {
+    transform: translate(30px, -40px) rotate(5deg);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translate(-20px, 30px) rotate(-5deg);
+    opacity: 0.06;
+  }
+  75% {
+    transform: translate(40px, 20px) rotate(3deg);
+    opacity: 0.1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .orb-1, .orb-2, .orb-3 {
+    width: 350px;
+    height: 350px;
+    filter: blur(80px);
+  }
+  
+  .animated-canvas {
+    opacity: 0.3;
+  }
+  
+  .travel-icon {
+    font-size: 30px;
+    opacity: 0.05;
+  }
+}

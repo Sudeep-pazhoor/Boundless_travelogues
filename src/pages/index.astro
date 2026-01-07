@@ -1,11 +1,36 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Preloader from "../components/Preloader.jsx";
+import CommitmentsSection from "../components/CommitmentsSection.jsx";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Boundless Travelogues - Unforgettable Journeys">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <Preloader client:load />
+
+  <div class="home-content" style={{ marginTop: "80px", marginBottom: "40px" }}>
+    <CommitmentsSection client:load />
+  </div>
+  
+  <style>
+    @media (max-width: 768px) {
+      .home-content {
+        margin-top: 60px !important;
+        margin-bottom: 30px !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .home-content {
+        margin-top: 50px !important;
+        margin-bottom: 25px !important;
+      }
+    }
+  </style>
 </Layout>

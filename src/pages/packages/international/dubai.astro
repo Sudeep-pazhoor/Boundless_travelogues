@@ -1,0 +1,160 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Dubai Package - Boundless Travelogues">
+  <section class="container fade-in">
+    <h1 style="text-align: center; color: var(--primary-color);">Dubai - City of Gold</h1>
+    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">Burj Khalifa, desert safaris, luxury shopping, and modern marvels</p>
+    
+    <div style="margin-bottom: 3rem;">
+      <img src="https://wallpaperaccess.com/full/222716.jpg" alt="Dubai" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+    </div>
+
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Famous & Most Visited Places</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div class="place-card">
+          <h3>🏙️ Burj Khalifa</h3>
+          <p>World's tallest building with observation decks offering stunning city views.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🏝️ Palm Jumeirah</h3>
+          <p>Iconic man-made island with luxury resorts, beaches, and attractions.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🛍️ Dubai Mall</h3>
+          <p>World's largest shopping mall with aquarium, ice rink, and entertainment.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🏜️ Desert Safari</h3>
+          <p>Thrilling dune bashing, camel rides, and traditional Bedouin experiences.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>⛵ Dubai Marina</h3>
+          <p>Waterfront district with yachts, restaurants, and stunning skyline views.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🕌 Jumeirah Mosque</h3>
+          <p>Beautiful mosque showcasing Islamic architecture and cultural tours.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🎢 IMG Worlds</h3>
+          <p>World's largest indoor theme park with thrilling rides and attractions.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🏖️ Jumeirah Beach</h3>
+          <p>Pristine beach with water sports, beach clubs, and Burj Al Arab views.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Package Highlights</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏙️</div>
+            <h4>Modern Marvels</h4>
+            <p>Burj Khalifa & Palm Jumeirah</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏜️</div>
+            <h4>Desert Adventures</h4>
+            <p>Safari & dune bashing</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🛍️</div>
+            <h4>Shopping Paradise</h4>
+            <p>Luxury malls & gold souks</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎢</div>
+            <h4>Entertainment</h4>
+            <p>Theme parks & attractions</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <h3 style="margin-bottom: 1rem;">Ready to Explore Dubai?</h3>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">Contact us to customize your perfect Dubai experience!</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="btn-primary">Book Now</a>
+          <a href="/packages/international" class="btn-secondary">Back to Packages</a>
+          <a href="https://wa.me/918078107622?text=Hi%2C%20I'm%20interested%20in%20the%20Dubai%20package%21" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .place-card {
+    background: rgba(10, 15, 25, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .place-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .place-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.25), 0 0 30px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(15, 20, 30, 0.95);
+  }
+  
+  .place-card:hover::before {
+    opacity: 1;
+  }
+  
+  .place-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .place-card p {
+    color: var(--text-color);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.75rem !important;
+    }
+    
+    .place-card {
+      padding: 1.25rem;
+    }
+  }
+</style>

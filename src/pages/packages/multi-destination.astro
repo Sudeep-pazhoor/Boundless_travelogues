@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PackageCard from '../../components/PackageCard.jsx';
+---
+
+<Layout title="Multi-Destination Escapes - Boundless Travelogues">
+  <section class="container">
+    <h1 style="text-align: center; color: var(--primary-color);">Multi-Destination Escapes</h1>
+    <p style="text-align: center; font-size: 1.15rem; margin-bottom: 3rem; color: var(--text-color);">Discover Kerala's gems with premium accommodations & local cuisine</p>
+    
+    <!-- Priority Destinations -->
+    <div class="grid">
+      <PackageCard client:load 
+        title="Kochi" 
+        image="https://keralatourism.ai/images/destination-kochi-chinese-fishing-nets.jpg" 
+        description="Fort Kochi heritage, Chinese fishing nets, and vibrant culture." 
+        link="/packages/multi-destination/kochi" />
+      
+      <PackageCard client:load 
+        title="Ooty" 
+        image="https://blog.mangohillhotels.com/wp-content/uploads/2023/10/OOTY-1557144864.jpg" 
+        description="Queen of Hill Stations with tea gardens and Nilgiri mountain railway." 
+        link="/packages/multi-destination/ooty" />
+      
+      <PackageCard client:load 
+        title="Wayanad" 
+        image="https://www.ekeralatourism.net/wp-content/uploads/2018/08/wayanad.jpg" 
+        description="Wildlife sanctuary, spice plantations, and misty mountains." 
+        link="/packages/multi-destination/wayanad" />
+      
+      <PackageCard client:load 
+        title="Munnar" 
+        image="https://images.unsplash.com/photo-1637066742971-726bee8d9f56?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVubmFyfGVufDB8fDB8fHww" 
+        description="Rolling tea plantations, cool climate, and scenic beauty." 
+        link="/packages/multi-destination/munnar" />
+      
+      <PackageCard client:load 
+        title="Wagamon" 
+        image="https://assets-news.housing.com/news/wp-content/uploads/2022/08/30075739/places-to-visit-in-vagamon-FEATURE-compressed.jpg" 
+        description="Misty meadows, pine forests, and adventure activities." 
+        link="/packages/multi-destination/wagamon" />
+      
+      <PackageCard client:load 
+        title="Kodaikanal" 
+        image="https://framedventures.com/wp-content/uploads/2022/09/best-hotels-in-kodaikanal-1024x512.jpg" 
+        description="Princess of Hill Stations with beautiful lake and pine forests." 
+        link="/packages/multi-destination/kodaikanal" />
+      
+      <PackageCard client:load 
+        title="Alleppey" 
+        image="https://www.shutterstock.com/image-photo/house-boat-under-blue-sky-600nw-1538903498.jpg" 
+        description="Venice of the East with serene backwaters and houseboats." 
+        link="/packages/multi-destination/alleppey" />
+      
+      <PackageCard client:load 
+        title="Idukki" 
+        image="https://keralabee.com/wp-content/uploads/2023/12/IMG_20231226_221948-1024x579.jpg" 
+        description="Hill station serenity with arch dam and wildlife." 
+        link="/packages/multi-destination/idukki" />
+      
+      <PackageCard client:load 
+        title="Kanyakumari" 
+        image="https://media1.thrillophilia.com/filestore/kwxztxin3y5gh963ssd2ypawkrcc_shutterstock_1902978550.jpg?w=400&dpr=2" 
+        description="Southernmost tip of India with stunning sunrise views." 
+        link="/packages/multi-destination/kanyakumari" />
+      
+      <PackageCard client:load 
+        title="Athirapilly" 
+        image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/4b/a2/1c/athirapally-falls-in.jpg?w=1200&h=-1&s=1" 
+        description="Niagara of India - majestic waterfalls and lush forests." 
+        link="/packages/multi-destination/athirapilly" />
+      
+      <PackageCard client:load 
+        title="Wonderla" 
+        image="https://i.ytimg.com/vi/tE0qMsFeLU4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBPu41DvH771KJHE1-78X5NiC9Y9g" 
+        description="Thrilling amusement park with water rides and attractions." 
+        link="/packages/multi-destination/wonderla" />
+      
+      <PackageCard client:load 
+        title="Ponmudi" 
+        image="https://www.trawell.in/admin/images/upload/929693975Ponmudi_Main2.jpg" 
+        description="Golden peak hill station with winding roads and tea gardens." 
+        link="/packages/multi-destination/ponmudi" />
+      
+      <PackageCard client:load 
+        title="Marayoor" 
+        image="https://media1.thrillophilia.com/filestore/st0vvkf30nde98jbqguln2w43hc1_dolmens_marayoour_idukki.jpg" 
+        description="Natural sandalwood forests and ancient dolmens." 
+        link="/packages/multi-destination/marayoor" />
+      
+      <PackageCard client:load 
+        title="Ramakkalmedu" 
+        image="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Statue_of_Kuruvan_%26_Kuruthi.jpg/640px-Statue_of_Kuruvan_%26_Kuruthi.jpg" 
+        description="Windy peaks with panoramic views and wind farms." 
+        link="/packages/multi-destination/ramakkalmedu" />
+    </div>
+  </section>
+</Layout>

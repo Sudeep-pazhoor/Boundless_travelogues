@@ -1,0 +1,432 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CategoryCard from "../components/CategoryCard.jsx";
+import TestimonialsSection from "../components/TestimonialsSection.jsx";
+---
+
+<Layout title="About Us - Boundless Travelogues">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Kaushan+Script&display=swap"
+        rel="stylesheet"
+    />
+    <!-- World Map Background (Fixed) -->
+    <div class="world-map-bg"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">
+            Boundless Travelogues
+        </h1>
+        <p style="font-size: 1.3rem; font-family: 'Brush Script MT', cursive;">
+            " Journey Beyond The Ordinary "
+        </p>
+    </section>
+
+    <!-- About Content Section -->
+    <section
+        class="container fade-in about-section"
+        style="padding: 4rem 2rem; position: relative; overflow: visible;"
+    >
+        <div
+            class="about-content-wrapper"
+            style="max-width: 1200px; margin: 0 auto;"
+        >
+            <!-- Script Image Section -->
+            <div class="script-image-container">
+                <img
+                    src="/Script.png"
+                    alt="Boundless Travelogues Script"
+                    class="script-image"
+                />
+            </div>
+
+            <!-- Package Category Section -->
+            <h2
+                style="text-align: center; color: var(--primary-color); margin-bottom: 1rem;"
+            >
+                Package Category
+            </h2>
+            <p
+                style="text-align: center; font-size: 1.15rem; margin-bottom: 3rem; color: var(--text-color);"
+            >
+                All packages include assured best accommodations with quality
+                food, guided tours, and seamless transport.
+            </p>
+
+            <div class="grid">
+                <CategoryCard
+                    client:load
+                    title="Luxury"
+                    image="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"
+                    description="Experience a level of luxury like never before with our dedicated team at your service throughout your tour, ensuring all your needs are met with the utmost attention and care. Treat yourself to the finest accommodations and experiences."
+                />
+                <CategoryCard
+                    client:load
+                    title="Premium"
+                    image="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+                    description="Indulge in luxury, comfort, and unforgettable moments with our Premium Class tour package. Enjoy top-tier travel and hospitality with enhanced amenities and curated experiences that make every moment special."
+                />
+                <CategoryCard
+                    client:load
+                    title="Budget Friendly"
+                    image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80"
+                    description="Our economy experience has been designed with comfort, quality and sustainability in mind. We've introduced reusable tableware that's part of a closed-loop recycling system, ensuring an eco-friendly journey without compromising on value."
+                />
+            </div>
+
+            <!-- Testimonials Section -->
+            <TestimonialsSection client:load />
+
+            <!-- Team Section Card -->
+            <a
+                href="https://sites.google.com/view/boundless-travelogues/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="team-card"
+                style="
+                    display: block;
+                    margin-top: 3rem;
+                    margin-bottom: 2rem;
+                    text-decoration: none;
+                    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+                    backdrop-filter: blur(20px);
+                    border: 2px solid rgba(139, 92, 246, 0.3);
+                    border-radius: 16px;
+                    padding: 2rem 1.5rem;
+                    text-align: center;
+                    position: relative;
+                    overflow: hidden;
+                    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    cursor: pointer;
+                "
+            >
+                <div style="position: relative; z-index: 1;">
+                    <div
+                        style="
+                        font-size: 2.5rem;
+                        margin-bottom: 0.8rem;
+                        filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+                    "
+                    >
+                        👥
+                    </div>
+                    <h2
+                        style="
+                        color: #a855f7;
+                        font-size: 1.6rem;
+                        margin-bottom: 0.4rem;
+                        text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+                        font-weight: 800;
+                        letter-spacing: 1px;
+                    "
+                    >
+                        View Our Teammates
+                    </h2>
+                    <p
+                        style="
+                        color: #c4b5fd;
+                        font-size: 1rem;
+                        margin: 0;
+                    "
+                    >
+                        Meet the dedicated team behind your unforgettable
+                        journeys
+                    </p>
+                    <div
+                        style="
+                        margin-top: 1rem;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: #a855f7;
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                    "
+                    >
+                        <span>View Our Team</span>
+                        <span
+                            style="transition: transform 0.3s ease;"
+                            class="arrow">→</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Decorative elements -->
+                <div
+                    style="
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+                    pointer-events: none;
+                "
+                >
+                </div>
+            </a>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    /* Script Image Container */
+    .script-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+        padding: 2rem 1rem;
+    }
+
+    .script-image {
+        max-width: 800px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .script-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Team Card Hover */
+    .team-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow:
+            0 20px 60px rgba(139, 92, 246, 0.4),
+            0 0 40px rgba(139, 92, 246, 0.3);
+        border-color: rgba(139, 92, 246, 0.6);
+        background: linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.15) 0%,
+            rgba(168, 85, 247, 0.15) 100%
+        );
+    }
+
+    .team-card:hover .arrow {
+        transform: translateX(5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .hero-section {
+            padding: 3rem 1.5rem !important;
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem !important;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem !important;
+        }
+
+        .script-image {
+            max-width: 700px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 2.5rem 1rem !important;
+        }
+
+        .hero-section h1 {
+            font-size: 2rem !important;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem !important;
+        }
+
+        .script-image-container {
+            margin-bottom: 3rem;
+            padding: 1.5rem 0.75rem;
+        }
+
+        .script-image {
+            max-width: 600px;
+        }
+
+        section > div > h2 {
+            font-size: 1.75rem !important;
+        }
+
+        section > div > p {
+            font-size: 1rem !important;
+            margin-bottom: 2.5rem !important;
+        }
+
+        .team-card {
+            padding: 1.75rem 1.25rem !important;
+            margin-top: 2.5rem !important;
+        }
+
+        .team-card > div > div:first-child {
+            font-size: 2.25rem !important;
+        }
+
+        .team-card h2 {
+            font-size: 1.5rem !important;
+        }
+
+        .team-card p {
+            font-size: 0.95rem !important;
+        }
+
+        .team-card > div > div:last-child {
+            font-size: 0.9rem !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-section {
+            padding: 2rem 0.75rem !important;
+        }
+
+        .hero-section h1 {
+            font-size: 1.75rem !important;
+        }
+
+        .hero-section p {
+            font-size: 1rem !important;
+        }
+
+        .script-image-container {
+            margin-bottom: 2.5rem;
+            padding: 1rem 0.5rem;
+        }
+
+        .script-image {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        section > div > h2 {
+            font-size: 1.5rem !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        section > div > p {
+            font-size: 0.95rem !important;
+            margin-bottom: 2rem !important;
+        }
+
+        .team-card {
+            padding: 1.5rem 1rem !important;
+            margin-top: 2rem !important;
+        }
+
+        .team-card > div > div:first-child {
+            font-size: 2rem !important;
+            margin-bottom: 0.65rem !important;
+        }
+
+        .team-card h2 {
+            font-size: 1.35rem !important;
+            margin-bottom: 0.35rem !important;
+        }
+
+        .team-card p {
+            font-size: 0.9rem !important;
+        }
+
+        .team-card > div > div:last-child {
+            font-size: 0.85rem !important;
+            margin-top: 0.85rem !important;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .hero-section h1 {
+            font-size: 1.5rem !important;
+        }
+
+        .hero-section p {
+            font-size: 0.95rem !important;
+        }
+
+        .script-image-container {
+            margin-bottom: 2rem;
+            padding: 0.75rem 0.25rem;
+        }
+
+        .script-image {
+            border-radius: 6px;
+        }
+
+        section > div > h2 {
+            font-size: 1.35rem !important;
+        }
+
+        section > div > p {
+            font-size: 0.9rem !important;
+        }
+
+        .team-card {
+            padding: 1.25rem 0.85rem !important;
+        }
+
+        .team-card h2 {
+            font-size: 1.2rem !important;
+        }
+
+        .team-card p {
+            font-size: 0.85rem !important;
+        }
+    }
+
+    /* World Map Background Styles */
+    .world-map-bg {
+        position: fixed; /* Fixed position to stay while scrolling */
+        top: 100px; /* Starts below the header (approx header height) */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 100px); /* Height minus header height */
+        background-image: url("/world-map.svg");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        opacity: 0.1; /* Reduced opacity */
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Override transparent backgrounds to allow map to show through */
+    .hero-section {
+        background-color: rgba(
+            10,
+            10,
+            10,
+            0.7
+        ) !important; /* Make hero semi-transparent */
+        backdrop-filter: blur(10px);
+    }
+
+    /* Ensure about section is transparent */
+    .about-section {
+        background: transparent !important;
+    }
+
+    /* Ensure all content sits on top */
+    .hero-section,
+    .about-section {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Ensure content sits on top */
+    .about-section > .about-content-wrapper {
+        position: relative;
+        z-index: 1;
+    }
+</style>

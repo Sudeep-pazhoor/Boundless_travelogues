@@ -1,0 +1,160 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Bhutan Package - Boundless Travelogues">
+  <section class="container fade-in">
+    <h1 style="text-align: center; color: var(--primary-color);">Bhutan - Land of Happiness</h1>
+    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">Himalayan kingdom with monasteries, mountains, and happiness</p>
+    
+    <div style="margin-bottom: 3rem;">
+      <img src="https://wallpaperaccess.com/full/1478951.jpg" alt="Bhutan" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+    </div>
+
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Famous & Most Visited Places</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div class="place-card">
+          <h3>🏔️ Tiger's Nest Monastery</h3>
+          <p>Iconic monastery perched on cliff at 3,120m with breathtaking mountain views.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🏰 Punakha Dzong</h3>
+          <p>Majestic fortress at river confluence, Bhutan's most beautiful dzong.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🗼 Thimphu</h3>
+          <p>Capital city with Buddha Dordenma statue, markets, and cultural attractions.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🌄 Dochula Pass</h3>
+          <p>Mountain pass with 108 chortens and panoramic Himalayan views.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🏛️ Paro Dzong</h3>
+          <p>Historic fortress monastery overlooking Paro valley with traditional architecture.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🌲 Phobjikha Valley</h3>
+          <p>Glacial valley and winter home to rare black-necked cranes.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🕉️ Chimi Lhakhang</h3>
+          <p>Fertility temple dedicated to Divine Madman with scenic rice field walks.</p>
+        </div>
+        
+        <div class="place-card">
+          <h3>🏞️ Haa Valley</h3>
+          <p>Remote pristine valley with traditional villages and untouched nature.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Package Highlights</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏔️</div>
+            <h4>Monastery Treks</h4>
+            <p>Tiger's Nest & sacred sites</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏰</div>
+            <h4>Dzong Fortresses</h4>
+            <p>Ancient architectural marvels</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌄</div>
+            <h4>Himalayan Views</h4>
+            <p>Pristine mountain landscapes</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🙏</div>
+            <h4>Cultural Immersion</h4>
+            <p>Buddhist traditions & festivals</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <h3 style="margin-bottom: 1rem;">Ready to Explore Bhutan?</h3>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">Contact us to customize your perfect Bhutan experience!</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="btn-primary">Book Now</a>
+          <a href="/packages/international" class="btn-secondary">Back to Packages</a>
+          <a href="https://wa.me/918078107622?text=Hi%2C%20I'm%20interested%20in%20the%20Bhutan%20package%21" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .place-card {
+    background: rgba(10, 15, 25, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .place-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .place-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.25), 0 0 30px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(15, 20, 30, 0.95);
+  }
+  
+  .place-card:hover::before {
+    opacity: 1;
+  }
+  
+  .place-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .place-card p {
+    color: var(--text-color);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.75rem !important;
+    }
+    
+    .place-card {
+      padding: 1.25rem;
+    }
+  }
+</style>

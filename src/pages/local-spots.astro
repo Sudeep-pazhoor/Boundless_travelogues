@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PackageCard from '../components/PackageCard.jsx';
+---
+
+<Layout title="Local Spots Nearby - Boundless Travelogues">
+  <section class="container">
+    <h1 style="text-align: center; color: var(--primary-color);">Discover Local Spots Nearby</h1>
+    <p style="text-align: center; font-size: 1.15rem; margin-bottom: 3rem; color: var(--text-color);">
+      Explore hidden gems and popular attractions close to your location
+    </p>
+    
+    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Popular Local Destinations</h2>
+    <div class="grid" style="margin-bottom: 4rem;">
+      <PackageCard client:load 
+        title="Kochi" 
+        image="https://keralatourism.ai/images/destination-kochi-chinese-fishing-nets.jpg" 
+        description="Fort Kochi heritage, Chinese fishing nets, and vibrant culture just 50km away." 
+        link="/packages/multi-destination/kochi" 
+        accommodation="Heritage hotels with Kerala cuisine" />
+      
+      <PackageCard client:load 
+        title="Munnar" 
+        image="https://images.unsplash.com/photo-1637066742971-726bee8d9f56?fm=jpg&q=60&w=3000" 
+        description="Rolling tea plantations and cool climate, 130km from Kochi." 
+        link="/packages/multi-destination/munnar" 
+        accommodation="Tea estate resorts" />
+      
+      <PackageCard client:load 
+        title="Alleppey" 
+        image="https://www.shutterstock.com/image-photo/house-boat-under-blue-sky-600nw-1538903498.jpg" 
+        description="Venice of the East with serene backwaters, 85km from Kochi." 
+        link="/packages/multi-destination/alleppey" 
+        accommodation="Houseboats and waterfront resorts" />
