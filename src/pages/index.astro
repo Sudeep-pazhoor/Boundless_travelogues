@@ -12,12 +12,44 @@ import CommitmentsSection from "../components/CommitmentsSection.jsx";
     rel="stylesheet"
   />
 
-  <Preloader client:load />
+  <style>
+    /* Critical CSS for Preloader Placeholder */
+    #preloader-placeholder {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(0, 212, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #00d4ff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Static placeholder shown while Three.js loads -->
+  <div id="preloader-placeholder">
+    <div class="spinner"></div>
+  </div>
+
+  <Preloader client:only="react" />
 
   <div class="home-content" style={{ marginTop: "80px", marginBottom: "40px" }}>
-    <CommitmentsSection client:load />
+    <CommitmentsSection client:visible />
   </div>
-  
+
   <style>
     @media (max-width: 768px) {
       .home-content {
@@ -25,7 +57,7 @@ import CommitmentsSection from "../components/CommitmentsSection.jsx";
         margin-bottom: 30px !important;
       }
     }
-    
+
     @media (max-width: 576px) {
       .home-content {
         margin-top: 50px !important;

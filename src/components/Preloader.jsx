@@ -396,6 +396,17 @@ const Preloader = () => {
     return () => window.removeEventListener('resize', detectDevice);
   }, []);
 
+  // Remove static placeholder when React component mounts
+  useEffect(() => {
+    const placeholder = document.getElementById('preloader-placeholder');
+    if (placeholder) {
+      placeholder.style.opacity = '0';
+      setTimeout(() => {
+        placeholder.remove();
+      }, 500);
+    }
+  }, []);
+
   const handleSequenceComplete = () => {
     setShowText(true);
     setTimeout(() => {

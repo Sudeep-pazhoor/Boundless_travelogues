@@ -16,9 +16,15 @@ export default defineConfig({
       // Chunk Three.js and GSAP separately for better caching
       rollupOptions: {
         output: {
-          manualChunks: {
-            'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
-            'gsap-vendor': ['gsap'],
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('three') || id.includes('@react-three')) {
+                return 'three-vendor';
+              }
+              if (id.includes('gsap')) {
+                return 'gsap-vendor';
+              }
+            }
           }
         }
       }
