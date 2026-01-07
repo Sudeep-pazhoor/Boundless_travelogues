@@ -54,7 +54,7 @@ const Compass = ({ onSequenceComplete, deviceType = 'desktop' }) => {
   const { camera } = useThree();
 
   // Load Logo Texture
-  const logoTexture = useTexture('/logo.png');
+  const logoTexture = useTexture('/logo.webp');
 
   // Get responsive compass settings
   const getCompassSettings = () => {
@@ -170,7 +170,7 @@ const Compass = ({ onSequenceComplete, deviceType = 'desktop' }) => {
     }, "reveal");
 
     tl.to(needleRef.current.scale, { x: 0, y: 0, z: 0, duration: 1 }, "reveal");
-    
+
     // Hide the compass elements (wheel) when logo appears
     tl.to(compassElementsRef.current.scale, { x: 0, y: 0, z: 0, duration: 1 }, "reveal");
 
@@ -214,137 +214,137 @@ const Compass = ({ onSequenceComplete, deviceType = 'desktop' }) => {
       {/* Compass Elements Group (everything except logo) */}
       <group ref={compassElementsRef}>
         {/* Glittering Sparkles - Responsive count and scale */}
-        <Sparkles 
-          count={settings.sparkleCount} 
-          scale={settings.sparkleScale} 
-          size={4} 
-          speed={0.4} 
-          opacity={0.5} 
-          color="#00D4FF" 
+        <Sparkles
+          count={settings.sparkleCount}
+          scale={settings.sparkleScale}
+          size={4}
+          speed={0.4}
+          opacity={0.5}
+          color="#00D4FF"
         />
 
         {/* --- Compass Case --- Responsive size */}
         <mesh position={[0, 0, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[settings.compassSize, settings.compassSize, 0.6, 64]} />
-        <meshPhysicalMaterial
-          color="#00D4FF"
-          emissive="#00D4FF"
-          emissiveIntensity={0.2}
-          metalness={1}
-          roughness={0.1}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
-          envMapIntensity={3}
-        />
-      </mesh>
-      {/* Inner Rim - Responsive size */}
-      <mesh position={[0, 0.35, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[settings.compassSize - 0.02, settings.compassSize - 0.02, 0.2, 64, 1, true]} />
-        <meshStandardMaterial color="#0099cc" side={THREE.DoubleSide} metalness={0.9} roughness={0.1} />
-      </mesh>
-      {/* Bottom Plate - Responsive size */}
-      <mesh position={[0, -0.31, 0]} receiveShadow>
-        <cylinderGeometry args={[settings.compassSize - 0.02, settings.compassSize - 0.02, 0.1, 64]} />
-        <meshStandardMaterial color="#000" />
-      </mesh>
-
-      {/* --- Dial Face --- Responsive size */}
-      <mesh position={[0, 0.31, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-        <circleGeometry args={[settings.compassSize - 0.4, 64]} />
-        <meshStandardMaterial color="#050505" roughness={0.3} metalness={0.4} />
-      </mesh>
-
-      {/* Markings - Responsive font sizes and positioning */}
-      <group position={[0, 0.32, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        {/* Cardinal Directions - Responsive font sizes */}
-        <Text position={[0, (settings.compassSize - 1), 0]} fontSize={settings.fontSize.cardinal} color="#00D4FF" anchorX="center" anchorY="middle" fontWeight="bold">N</Text>
-        <Text position={[(settings.compassSize - 1), 0, 0]} fontSize={settings.fontSize.secondary} color="#FFFFFF" rotation={[0, 0, -Math.PI / 2]} anchorX="center" anchorY="middle">E</Text>
-        <Text position={[0, -(settings.compassSize - 1), 0]} fontSize={settings.fontSize.secondary} color="#FFFFFF" rotation={[0, 0, Math.PI]} anchorX="center" anchorY="middle">S</Text>
-        <Text position={[-(settings.compassSize - 1), 0, 0]} fontSize={settings.fontSize.secondary} color="#FFFFFF" rotation={[0, 0, Math.PI / 2]} anchorX="center" anchorY="middle">W</Text>
-
-        {/* Decorative Rings - Responsive sizing */}
-        <mesh position={[0, 0, -0.01]}>
-          <ringGeometry args={[(settings.compassSize - 1.4), (settings.compassSize - 1.35), 64]} />
-          <meshBasicMaterial color="#00D4FF" toneMapped={false} />
+          <cylinderGeometry args={[settings.compassSize, settings.compassSize, 0.6, 64]} />
+          <meshPhysicalMaterial
+            color="#00D4FF"
+            emissive="#00D4FF"
+            emissiveIntensity={0.2}
+            metalness={1}
+            roughness={0.1}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
+            envMapIntensity={3}
+          />
         </mesh>
-        <mesh position={[0, 0, -0.01]}>
-          <ringGeometry args={[(settings.compassSize - 0.7), (settings.compassSize - 0.68), 64]} />
-          <meshBasicMaterial color="#333" />
+        {/* Inner Rim - Responsive size */}
+        <mesh position={[0, 0.35, 0]} castShadow receiveShadow>
+          <cylinderGeometry args={[settings.compassSize - 0.02, settings.compassSize - 0.02, 0.2, 64, 1, true]} />
+          <meshStandardMaterial color="#0099cc" side={THREE.DoubleSide} metalness={0.9} roughness={0.1} />
+        </mesh>
+        {/* Bottom Plate - Responsive size */}
+        <mesh position={[0, -0.31, 0]} receiveShadow>
+          <cylinderGeometry args={[settings.compassSize - 0.02, settings.compassSize - 0.02, 0.1, 64]} />
+          <meshStandardMaterial color="#000" />
         </mesh>
 
-        {/* Ticks - Responsive sizing */}
-        {Array.from({ length: 60 }).map((_, i) => {
-          const isMajor = i % 5 === 0;
-          const length = isMajor ? 0.35 * (settings.compassSize / 3.5) : 0.15 * (settings.compassSize / 3.5);
-          const width = isMajor ? 0.06 * (settings.compassSize / 3.5) : 0.02 * (settings.compassSize / 3.5);
-          const color = isMajor ? "#00D4FF" : "#555";
-          const tickRadius = (settings.compassSize - 0.7);
-          return (
-            <mesh key={i} rotation={[0, 0, (i * Math.PI) / 30]} position={[0, 0, 0]}>
-              <planeGeometry args={[width, length]} />
-              <meshBasicMaterial color={color} toneMapped={false} />
-              <group position={[0, tickRadius, 0]} />
-            </mesh>
-          );
-        })}
-      </group>
-
-      {/* --- Needle --- Responsive sizing */}
-      <group ref={needleRef} position={[0, 0.5, 0]}>
-        {/* Center Cap - Responsive size */}
-        <mesh position={[0, 0.05, 0]}>
-          <cylinderGeometry args={[0.3 * (settings.compassSize / 3.5), 0.3 * (settings.compassSize / 3.5), 0.15, 32]} />
-          <meshPhysicalMaterial color="#00D4FF" metalness={1} roughness={0.1} clearcoat={1} />
-        </mesh>
-        <mesh position={[0, 0.13, 0]}>
-          <sphereGeometry args={[0.15 * (settings.compassSize / 3.5), 16, 16]} />
-          <meshPhysicalMaterial color="#00D4FF" metalness={1} roughness={0.1} clearcoat={1} />
+        {/* --- Dial Face --- Responsive size */}
+        <mesh position={[0, 0.31, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+          <circleGeometry args={[settings.compassSize - 0.4, 64]} />
+          <meshStandardMaterial color="#050505" roughness={0.3} metalness={0.4} />
         </mesh>
 
-        {/* North (Red Diamond) - Responsive size */}
-        <mesh position={[0, 0, -1.0 * needleScale]} rotation={[Math.PI / 2, 0, 0]}>
-          <cylinderGeometry args={[0.02 * needleScale, 0.2 * needleScale, 2.0 * needleScale, 4]} />
-          <meshStandardMaterial color="#D00000" roughness={0.2} metalness={0.3} />
-        </mesh>
-        {/* South (Silver Diamond) - Responsive size */}
-        <mesh position={[0, 0, 1.0 * needleScale]} rotation={[-Math.PI / 2, 0, 0]}>
-          <cylinderGeometry args={[0.02 * needleScale, 0.2 * needleScale, 2.0 * needleScale, 4]} />
-          <meshStandardMaterial color="#E0E0E0" roughness={0.2} metalness={0.6} />
-        </mesh>
-      </group>
+        {/* Markings - Responsive font sizes and positioning */}
+        <group position={[0, 0.32, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          {/* Cardinal Directions - Responsive font sizes */}
+          <Text position={[0, (settings.compassSize - 1), 0]} fontSize={settings.fontSize.cardinal} color="#00D4FF" anchorX="center" anchorY="middle" fontWeight="bold">N</Text>
+          <Text position={[(settings.compassSize - 1), 0, 0]} fontSize={settings.fontSize.secondary} color="#FFFFFF" rotation={[0, 0, -Math.PI / 2]} anchorX="center" anchorY="middle">E</Text>
+          <Text position={[0, -(settings.compassSize - 1), 0]} fontSize={settings.fontSize.secondary} color="#FFFFFF" rotation={[0, 0, Math.PI]} anchorX="center" anchorY="middle">S</Text>
+          <Text position={[-(settings.compassSize - 1), 0, 0]} fontSize={settings.fontSize.secondary} color="#FFFFFF" rotation={[0, 0, Math.PI / 2]} anchorX="center" anchorY="middle">W</Text>
 
-      {/* --- Glass Cover --- Responsive size */}
-      <mesh ref={glassRef} position={[0, 0.7, 0]}>
-        <cylinderGeometry args={[settings.compassSize - 0.2, settings.compassSize - 0.2, 0.15, 64]} />
-        <MeshTransmissionMaterial
-          thickness={0.5}
-          roughness={0.02}
-          transmission={0.95}
-          ior={1.52}
-          chromaticAberration={0.02}
-          anisotropy={0.1}
-        />
-      </mesh>
-
-      {/* --- Screws --- Responsive positioning */}
-      {[0, 1, 2, 3].map((i) => (
-        <mesh
-          key={i}
-          ref={el => screwsRef.current[i] = el}
-          position={[
-            Math.sin(i * Math.PI / 2 + Math.PI / 4) * (settings.compassSize - 0.2),
-            0.6,
-            Math.cos(i * Math.PI / 2 + Math.PI / 4) * (settings.compassSize - 0.2)
-          ]}
-        >
-          <cylinderGeometry args={[0.15 * (settings.compassSize / 3.5), 0.15 * (settings.compassSize / 3.5), 0.2, 16]} />
-          <meshStandardMaterial color="#A9A9A9" metalness={1} roughness={0.1} />
-          <mesh position={[0, 0.11, 0]}>
-            <boxGeometry args={[0.2 * (settings.compassSize / 3.5), 0.05, 0.05]} />
-            <meshStandardMaterial color="#111" />
+          {/* Decorative Rings - Responsive sizing */}
+          <mesh position={[0, 0, -0.01]}>
+            <ringGeometry args={[(settings.compassSize - 1.4), (settings.compassSize - 1.35), 64]} />
+            <meshBasicMaterial color="#00D4FF" toneMapped={false} />
           </mesh>
+          <mesh position={[0, 0, -0.01]}>
+            <ringGeometry args={[(settings.compassSize - 0.7), (settings.compassSize - 0.68), 64]} />
+            <meshBasicMaterial color="#333" />
+          </mesh>
+
+          {/* Ticks - Responsive sizing */}
+          {Array.from({ length: 60 }).map((_, i) => {
+            const isMajor = i % 5 === 0;
+            const length = isMajor ? 0.35 * (settings.compassSize / 3.5) : 0.15 * (settings.compassSize / 3.5);
+            const width = isMajor ? 0.06 * (settings.compassSize / 3.5) : 0.02 * (settings.compassSize / 3.5);
+            const color = isMajor ? "#00D4FF" : "#555";
+            const tickRadius = (settings.compassSize - 0.7);
+            return (
+              <mesh key={i} rotation={[0, 0, (i * Math.PI) / 30]} position={[0, 0, 0]}>
+                <planeGeometry args={[width, length]} />
+                <meshBasicMaterial color={color} toneMapped={false} />
+                <group position={[0, tickRadius, 0]} />
+              </mesh>
+            );
+          })}
+        </group>
+
+        {/* --- Needle --- Responsive sizing */}
+        <group ref={needleRef} position={[0, 0.5, 0]}>
+          {/* Center Cap - Responsive size */}
+          <mesh position={[0, 0.05, 0]}>
+            <cylinderGeometry args={[0.3 * (settings.compassSize / 3.5), 0.3 * (settings.compassSize / 3.5), 0.15, 32]} />
+            <meshPhysicalMaterial color="#00D4FF" metalness={1} roughness={0.1} clearcoat={1} />
+          </mesh>
+          <mesh position={[0, 0.13, 0]}>
+            <sphereGeometry args={[0.15 * (settings.compassSize / 3.5), 16, 16]} />
+            <meshPhysicalMaterial color="#00D4FF" metalness={1} roughness={0.1} clearcoat={1} />
+          </mesh>
+
+          {/* North (Red Diamond) - Responsive size */}
+          <mesh position={[0, 0, -1.0 * needleScale]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.02 * needleScale, 0.2 * needleScale, 2.0 * needleScale, 4]} />
+            <meshStandardMaterial color="#D00000" roughness={0.2} metalness={0.3} />
+          </mesh>
+          {/* South (Silver Diamond) - Responsive size */}
+          <mesh position={[0, 0, 1.0 * needleScale]} rotation={[-Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.02 * needleScale, 0.2 * needleScale, 2.0 * needleScale, 4]} />
+            <meshStandardMaterial color="#E0E0E0" roughness={0.2} metalness={0.6} />
+          </mesh>
+        </group>
+
+        {/* --- Glass Cover --- Responsive size */}
+        <mesh ref={glassRef} position={[0, 0.7, 0]}>
+          <cylinderGeometry args={[settings.compassSize - 0.2, settings.compassSize - 0.2, 0.15, 64]} />
+          <MeshTransmissionMaterial
+            thickness={0.5}
+            roughness={0.02}
+            transmission={0.95}
+            ior={1.52}
+            chromaticAberration={0.02}
+            anisotropy={0.1}
+          />
         </mesh>
-      ))}
+
+        {/* --- Screws --- Responsive positioning */}
+        {[0, 1, 2, 3].map((i) => (
+          <mesh
+            key={i}
+            ref={el => screwsRef.current[i] = el}
+            position={[
+              Math.sin(i * Math.PI / 2 + Math.PI / 4) * (settings.compassSize - 0.2),
+              0.6,
+              Math.cos(i * Math.PI / 2 + Math.PI / 4) * (settings.compassSize - 0.2)
+            ]}
+          >
+            <cylinderGeometry args={[0.15 * (settings.compassSize / 3.5), 0.15 * (settings.compassSize / 3.5), 0.2, 16]} />
+            <meshStandardMaterial color="#A9A9A9" metalness={1} roughness={0.1} />
+            <mesh position={[0, 0.11, 0]}>
+              <boxGeometry args={[0.2 * (settings.compassSize / 3.5), 0.05, 0.05]} />
+              <meshStandardMaterial color="#111" />
+            </mesh>
+          </mesh>
+        ))}
       </group>
 
       {/* --- Logo Reveal Plane --- Responsive size */}
@@ -379,7 +379,7 @@ const Preloader = () => {
       const isMobile = width <= 768;
       const isTablet = width > 768 && width <= 1024;
       const isSmallMobile = width <= 480;
-      
+
       if (isSmallMobile) {
         setDeviceType('small-mobile');
       } else if (isMobile) {
@@ -526,13 +526,13 @@ const Preloader = () => {
           height: 100% !important;
         }
       `}</style>
-      
-      <Canvas 
-        shadows 
-        dpr={responsiveValues.canvasDpr} 
-        gl={{ 
-          antialias: true, 
-          toneMapping: THREE.ACESFilmicToneMapping, 
+
+      <Canvas
+        shadows
+        dpr={responsiveValues.canvasDpr}
+        gl={{
+          antialias: true,
+          toneMapping: THREE.ACESFilmicToneMapping,
           outputColorSpace: THREE.SRGBColorSpace,
           powerPreference: deviceType === 'small-mobile' ? 'low-power' : 'high-performance'
         }}
@@ -543,10 +543,10 @@ const Preloader = () => {
           display: 'block'
         }}
       >
-        <PerspectiveCamera 
-          makeDefault 
-          position={[0, responsiveValues.cameraDistance, 0]} 
-          fov={responsiveValues.canvasFov} 
+        <PerspectiveCamera
+          makeDefault
+          position={[0, responsiveValues.cameraDistance, 0]}
+          fov={responsiveValues.canvasFov}
         />
 
         {/* Enhanced Lighting for Glitter - Adjusted for mobile performance */}
@@ -567,12 +567,12 @@ const Preloader = () => {
 
         <Suspense fallback={<Loader />}>
           <Compass onSequenceComplete={handleSequenceComplete} deviceType={deviceType} />
-          <ContactShadows 
-            position={[0, -1, 0]} 
-            opacity={0.6} 
-            scale={20} 
-            blur={2} 
-            far={4} 
+          <ContactShadows
+            position={[0, -1, 0]}
+            opacity={0.6}
+            scale={20}
+            blur={2}
+            far={4}
           />
         </Suspense>
       </Canvas>
@@ -596,7 +596,7 @@ const Preloader = () => {
         boxSizing: 'border-box'
       }}>
         <img
-          src="/Boundless_text.png"
+          src="/Boundless_text.webp"
           alt="Boundless Travelogues"
           style={{
             maxWidth: responsiveValues.textMaxWidth,

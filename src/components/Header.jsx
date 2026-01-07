@@ -25,7 +25,6 @@ const Header = () => {
 
   return (
     <>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
       <header style={{
         background: '#0d0d0d',
         color: '#fff',
@@ -41,8 +40,8 @@ const Header = () => {
           {/* Logo - Left Side */}
           <div style={{ display: 'flex', alignItems: 'center', flex: '0 0 auto' }}>
             <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', transition: 'transform 0.3s ease' }} className="logo-link">
-              <img src="/logo.png" alt="Boundless Travelogues Logo" style={{ height: '60px', marginRight: '1rem', filter: 'drop-shadow(0 0 10px rgba(0, 212, 255, 0.3))' }} onError={(e) => { e.target.style.display = 'none'; }} />
-              <img src="/Boundless_text.png" alt="Boundless Travelogues" style={{ height: '80px', filter: 'drop-shadow(0 0 10px rgba(0, 212, 255, 0.3))' }} />
+              <img src="/logo.webp" alt="Boundless Travelogues Logo" style={{ height: '60px', marginRight: '1rem', filter: 'drop-shadow(0 0 10px rgba(0, 212, 255, 0.3))' }} onError={(e) => { e.target.style.display = 'none'; }} />
+              <img src="/Boundless_text.webp" alt="Boundless Travelogues" style={{ height: '80px', filter: 'drop-shadow(0 0 10px rgba(0, 212, 255, 0.3))' }} />
             </a>
           </div>
 

@@ -1,8 +1,55 @@
+# Boundless Travelogues - robots.txt
+# https://boundlesstravelogues.com
+
+# Allow all search engines
 User-agent: *
 Allow: /
 
+# Crawl-delay for respectful crawling (seconds between requests)
+Crawl-delay: 1
+
+# Disallow build artifacts and private paths
+Disallow: /_astro/
+Disallow: /.astro/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Allow specific static assets
+Allow: /logo.webp
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Primary Sitemap location
 Sitemap: https://boundlesstravelogues.com/sitemap.xml
 
-# Disallow admin or private areas if any
-# User-agent: *
-# Disallow: /admin/
+# Google Bot specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing Bot specific rules  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+
+# Social Media Crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Image crawlers
+User-agent: Googlebot-Image
+Allow: /gallery/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
