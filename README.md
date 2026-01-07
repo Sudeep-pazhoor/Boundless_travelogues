@@ -1,7 +1,5 @@
 # Boundless Travelogues - Professional Travel Agency Website
 
-A modern, professional travel agency website built with Astro, React, and GSAP animations.
-
 ## 🌟 Features
 
 - **Responsive Design**: Fully responsive across all devices (mobile, tablet, desktop)
@@ -102,6 +100,4 @@ npm run dev
 ## 🤝 Support
 
 For support or inquiries, please contact us through:
-- Phone: +91 8078107622
 - Email: boundlesstravelogues@gmail.com
-- WhatsApp: Click the floating button on the website
