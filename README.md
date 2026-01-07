@@ -80,46 +80,6 @@ npm run dev
 └── README.md
 ```
 
-## 🎨 Customization
-
-### Update Contact Information
-Edit the following files:
-- `src/components/Footer.jsx` - Footer contact details
-- `src/pages/contact.astro` - Contact page information
-- `src/components/WhatsAppButton.jsx` - WhatsApp number
-
-### Update Company Information
-- `src/pages/about.astro` - Company story and details
-- `src/pages/index.astro` - Home page content
-- `src/layouts/Layout.astro` - SEO meta tags
-
-### Add New Packages
-1. Create a new page in `src/pages/packages/`
-2. Add the package card to `src/pages/packages.astro`
-3. Update navigation if needed
-
-## 📱 Features
-
-### Responsive Navigation
-- Desktop: Horizontal navigation bar
-- Mobile: Hamburger menu with slide-out navigation
-
-### WhatsApp Integration
-- Floating WhatsApp button on all pages
-- Pre-filled messages for easy contact
-- Contact form redirects to WhatsApp
-
-### Gallery Filtering
-- Filter images by destination
-- Smooth transitions and hover effects
-- Responsive grid layout
-
-### SEO Optimization
-- Meta tags for search engines
-- Open Graph tags for social media
-- Semantic HTML structure
-- Fast loading times
-
 ## 🔧 Technologies Used
 
 - **Astro 5.15.8** - Static site generator
