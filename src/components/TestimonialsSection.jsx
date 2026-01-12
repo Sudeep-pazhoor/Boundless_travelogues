@@ -17,12 +17,6 @@ const TestimonialsSection = () => {
       comment: 'The trip and the coordinators were nice as a whole boundless did a great job.'
     },
     {
-      image: '/testimonials/c2.webp',
-      name: 'Sreeprasad L S',
-      rating: 5,
-      comment: 'The Coorg trip was awesome—comfortable travel, well-timed visits at every destination, and enough time to explore each place without any rush.'
-    },
-    {
       image: '/testimonials/c4.webp',
       name: 'Stinphy Juwal',
       rating: 5,

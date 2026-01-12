@@ -215,7 +215,7 @@ const Header = () => {
                   <i className="bi bi-instagram"></i>
                 </a>
                 <a
-                  href="https://wa.me/8078107622"
+                  href="https://wa.me/918078107622"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
